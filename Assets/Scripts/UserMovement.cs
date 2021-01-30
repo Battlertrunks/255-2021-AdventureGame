@@ -13,7 +13,7 @@ public class UserMovement : MonoBehaviour
     public float mouseSenSpeedY = 15;
     private float camsPitch = 0;
 
-    private float jumpHeight = 20f;
+    private float jumpHeight = 2f;
     private float gravity = -9f;
 
     private Vector3 jump;
@@ -25,8 +25,12 @@ public class UserMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        characterObject = GetComponent<CharacterController>(); //Do you see the screen?
+        characterObject = GetComponent<CharacterController>();
         userCam = GetComponentInChildren<Camera>();
+
+        // Restricts user's cursor and hides it
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -44,8 +48,11 @@ public class UserMovement : MonoBehaviour
         float hMovement = Input.GetAxis("Horizontal");
         float vMovement = Input.GetAxis("Vertical");
 
-        speed = (transform.right * hMovement + transform.forward * vMovement) * playerSpeed * Time.deltaTime;
-        //characterObject.Move(speed);
+        Vector3 newSpeed = (transform.right * hMovement + transform.forward * vMovement) * playerSpeed;
+
+        speed.x = newSpeed.x;
+        speed.z = newSpeed.z;
+        
     }
 
     void CameraView()
@@ -74,6 +81,6 @@ public class UserMovement : MonoBehaviour
         }
 
         speed.y += gravity * Time.deltaTime;
-       
+        
     }
 }
