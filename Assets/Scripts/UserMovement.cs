@@ -37,7 +37,8 @@ public class UserMovement : MonoBehaviour
     void Update()
     {
         PlayerMovementControls();
-        CameraView();
+        if(Time.timeScale != 0)
+            CameraView();
         Jump();
         characterObject.Move(speed * Time.deltaTime);
     }

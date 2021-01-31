@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerItemPickup : MonoBehaviour
+public class UniformPickup : MonoBehaviour
 {
-
     public void PlayerPickingUpItem()
     {
-        InventorySystem.mainInventory.garageDoorRemote = true;
+        InventorySystem.mainInventory.uniform = true;
         InventorySystem.mainInventory.inventoryCounter++;
 
         Destroy(gameObject);

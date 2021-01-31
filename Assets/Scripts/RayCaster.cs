@@ -10,6 +10,7 @@ public class RayCaster : MonoBehaviour
     void Start()
     {
         rayCam = GetComponent<Camera>();
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -33,6 +34,30 @@ public class RayCaster : MonoBehaviour
                 KeysPickup keys = hasBeenHit.transform.GetComponent<KeysPickup>();
                 if (keys != null)
                     keys.PlayerPickingUpItem();
+                
+                FoodPickup lunch = hasBeenHit.transform.GetComponent<FoodPickup>();
+                if (lunch != null)
+                    lunch.PlayerPickingUpItem();
+
+                WorkIDPickup id = hasBeenHit.transform.GetComponent<WorkIDPickup>();
+                if (id != null)
+                    id.PlayerPickingUpItem();
+                
+                UniformPickup workClothes = hasBeenHit.transform.GetComponent<UniformPickup>();
+                if (workClothes != null)
+                    workClothes.PlayerPickingUpItem();
+
+                CarKeysPickup vehicleKeys = hasBeenHit.transform.GetComponent<CarKeysPickup>();
+                if (vehicleKeys != null)
+                    vehicleKeys.PlayerPickingUpItem();
+
+                CoffeePickup coffee = hasBeenHit.transform.GetComponent<CoffeePickup>();
+                if (coffee != null)
+                    coffee.PlayerPickingUpItem();
+
+                DestroyBush cuttingBush = hasBeenHit.transform.GetComponent<DestroyBush>();
+                if (cuttingBush != null)
+                    cuttingBush.CuttingBushWithTrimmer();
 
                 DoorMechanic doorFunction = hasBeenHit.transform.GetComponentInParent<DoorMechanic>();
                 if (doorFunction != null)
@@ -41,6 +66,15 @@ public class RayCaster : MonoBehaviour
                 GarageMechanic garageFunction = hasBeenHit.transform.GetComponentInParent<GarageMechanic>();
                 if (garageFunction != null)
                     garageFunction.PlayerInteractionWithDoor(transform.parent.position);
+
+                YouWin winCon = hasBeenHit.transform.GetComponentInParent<YouWin>();
+                if (InventorySystem.mainInventory.inventoryCounter == 8 && winCon != null)
+                {
+                    winCon.WinCondition();
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.Confined;
+                    Time.timeScale = 0;
+                }
             }
         }
     }
