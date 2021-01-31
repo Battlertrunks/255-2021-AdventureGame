@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorMechanic : MonoBehaviour
+public class GarageMechanic : MonoBehaviour
 {
     public Transform doorHinge;
 
@@ -13,7 +13,7 @@ public class DoorMechanic : MonoBehaviour
     /// <summary>
     /// Animations variables for the door
     /// </summary>
-    public float lengthOfAnim = 0.5f;
+    public float lengthOfAnim = 1f;
     private float timeOfAnim = 0;
     private bool isAnimPlaying = false;
     private bool closedOrOpen = true;
@@ -21,7 +21,8 @@ public class DoorMechanic : MonoBehaviour
     void Update()
     {
         //Playing the animation of the door when the player clicks on it
-        if (isAnimPlaying) {
+        if (isAnimPlaying)
+        {
             if (!closedOrOpen)
                 timeOfAnim += Time.deltaTime; // These play the door animation backwards and forwards when the player interacts
             else
@@ -41,28 +42,25 @@ public class DoorMechanic : MonoBehaviour
             }
 
             // Setting the door's angle
-            doorHinge.localRotation = Quaternion.Euler(0, doorsAngle * percentOfAnim, 0);
+            doorHinge.localRotation = Quaternion.Euler(-doorsAngle * percentOfAnim, 0, 0);
         }
     }
 
     public void PlayerInteractionWithDoor(Vector3 pos)
     {
-        if (InventorySystem.mainInventory.houseKeys == false)
+        if (InventorySystem.mainInventory.garageDoorRemote == false)
             return;
 
-        if (isAnimPlaying)
+            if (isAnimPlaying)
             return; // This executes nothing
 
         Vector3 playersDisToDoor = pos - transform.position;
         playersDisToDoor = playersDisToDoor.normalized;
-        bool sidePlayerIsOn = (Vector3.Dot(playersDisToDoor, transform.forward) < 0f);
 
         closedOrOpen = !closedOrOpen;
         if (!closedOrOpen)
         {
             doorsAngle = 90;
-            if (sidePlayerIsOn)
-                doorsAngle = -90;
         }
 
         isAnimPlaying = true;
