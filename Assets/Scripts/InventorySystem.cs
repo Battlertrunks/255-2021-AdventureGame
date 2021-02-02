@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class InventorySystem : MonoBehaviour
 {
-    // Creating a Singleton design
+    // Creating a Singleton design that makes a inventory system
 
-    public bool trimmer = false, garageDoorRemote = false, houseKeys = false, food = false,
-        uniform = false, workID = false, carKeys = false, coffee = false;
+    public List<bool> items; // A List of the items that the player and abtain
 
     public int inventoryCounter = 0;
 

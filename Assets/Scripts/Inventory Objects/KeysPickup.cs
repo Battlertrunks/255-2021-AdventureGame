@@ -6,9 +6,11 @@ public class KeysPickup : MonoBehaviour
 {
     public void PlayerPickingUpItem()
     {
-        InventorySystem.mainInventory.houseKeys = true;
+        // When player finds the house keys, it puts it into you inventory and increments you item amount
+        InventorySystem.mainInventory.items[3] = true;
         InventorySystem.mainInventory.inventoryCounter++;
 
+        // Destroys key
         Destroy(gameObject);
     }
 }

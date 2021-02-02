@@ -6,9 +6,11 @@ public class CoffeePickup : MonoBehaviour
 {
     public void PlayerPickingUpItem()
     {
-        InventorySystem.mainInventory.coffee = true;
+        // When player finds the Coffee, it puts it into you inventory and increments you item amount
+        InventorySystem.mainInventory.items[7] = true;
         InventorySystem.mainInventory.inventoryCounter++;
 
+        // Destroys gameobject
         Destroy(gameObject);
     }
 }

@@ -27,9 +27,9 @@ public class DoorMechanic : MonoBehaviour
             else
                 timeOfAnim -= Time.deltaTime;
 
-            float percentOfAnim = timeOfAnim / lengthOfAnim;
+            float percentOfAnim = timeOfAnim / lengthOfAnim; // Percent of animation
 
-            if (percentOfAnim < 0 && closedOrOpen)
+            if (percentOfAnim < 0 && closedOrOpen) // Percent of animation between 0 to 100%
             {
                 isAnimPlaying = false;
                 percentOfAnim = 0;
@@ -47,17 +47,17 @@ public class DoorMechanic : MonoBehaviour
 
     public void PlayerInteractionWithDoor(Vector3 pos)
     {
-        if (InventorySystem.mainInventory.houseKeys == false)
-            return;
+        if (InventorySystem.mainInventory.items[3] == false)
+            return; // Executes nothing
 
         if (isAnimPlaying)
             return; // This executes nothing
 
         Vector3 playersDisToDoor = pos - transform.position;
-        playersDisToDoor = playersDisToDoor.normalized;
+        playersDisToDoor = playersDisToDoor.normalized; // Normalizes the position
         bool sidePlayerIsOn = (Vector3.Dot(playersDisToDoor, transform.forward) < 0f);
 
-        closedOrOpen = !closedOrOpen;
+        closedOrOpen = !closedOrOpen; // toggles
         if (!closedOrOpen)
         {
             doorsAngle = 90;
