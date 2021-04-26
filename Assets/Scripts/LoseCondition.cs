@@ -20,12 +20,14 @@ public class LoseCondition : MonoBehaviour
 
     public void PlayAgain() // Player can press "Play Again" button to play the game again
     {
+        SoundEffectBoard.UISound();
         Destroy(inventoryManager);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); // Reloads scene
     }
 
     public void MainMenu() // Player can press "Main Menu" to go back to he main menu
     {
+        SoundEffectBoard.UISound();
         Destroy(inventoryManager);
         SceneManager.LoadScene("MainMenu"); // Loads main menu scene
     }

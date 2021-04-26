@@ -28,21 +28,25 @@ public class GUI : MonoBehaviour
 
     public void PlayBttn() // If player presses the play button, it will load and play the game
     {
+        SoundEffectBoard.UISound();
         SceneManager.LoadScene("Gameplay");
     }
 
     public void AboutBtnn() // If player presses the about button, it will open the about screen
     {
+        SoundEffectBoard.UISound();
         aboutScreen.SetActive(true);
     }
 
     public void BackBttn() // If player presses the back button on the about screen, it will set the aboutscreen's active to false
     {
+        SoundEffectBoard.UISound();
         aboutScreen.SetActive(false);
     }
 
     public void QuitBttn() // If player presses the quit button, the application ends
     {
+        SoundEffectBoard.UISound();
         Application.Quit();
     }
 }
