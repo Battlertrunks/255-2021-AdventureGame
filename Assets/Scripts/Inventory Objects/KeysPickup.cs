@@ -9,6 +9,7 @@ public class KeysPickup : MonoBehaviour
         // When player finds the house keys, it puts it into you inventory and increments you item amount
         InventorySystem.mainInventory.items[3] = true;
         InventorySystem.mainInventory.inventoryCounter++;
+        SoundEffectBoard.GrabSound();
 
         // Destroys key
         Destroy(gameObject);

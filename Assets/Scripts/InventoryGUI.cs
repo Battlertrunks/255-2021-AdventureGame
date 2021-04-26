@@ -83,6 +83,7 @@ public class InventoryGUI : MonoBehaviour
     public void EquipTrimmer()
     {
         equipableItems[0].SetActive(true);
+        SoundEffectBoard.BushCutterSound();
 
         if (attempts)
         {
@@ -97,6 +98,7 @@ public class InventoryGUI : MonoBehaviour
     // Player clicks on item 1 button for its information through the inventory menu
     public void BttnInfo1()
     {
+        SoundEffectBoard.UISound();
         // switches it on when the player clicks on the button
         if (infoBoxSwitch)
         {
@@ -117,6 +119,7 @@ public class InventoryGUI : MonoBehaviour
     // Player clicks on item 2 button for its information through the inventory menu
     public void BttnInfo2()
     {
+        SoundEffectBoard.UISound();
         if (infoBoxSwitch)
         {
             infoBoxs[1].SetActive(true);
@@ -135,6 +138,7 @@ public class InventoryGUI : MonoBehaviour
     // Player clicks on item 3 button for its information through the inventory menu
     public void BttnInfo3()
     {
+        SoundEffectBoard.UISound();
         if (infoBoxSwitch)
         {
             infoBoxs[2].SetActive(true);
@@ -153,6 +157,7 @@ public class InventoryGUI : MonoBehaviour
     // Player clicks on item 4 button for its information through the inventory menu
     public void BttnInfo4()
     {
+        SoundEffectBoard.UISound();
         if (infoBoxSwitch)
         {
             infoBoxs[3].SetActive(true);
@@ -171,6 +176,7 @@ public class InventoryGUI : MonoBehaviour
     // Player clicks on item 5 button for its information through the inventory menu
     public void BttnInfo5()
     {
+        SoundEffectBoard.UISound();
         if (infoBoxSwitch)
         {
             infoBoxs[4].SetActive(true);
@@ -189,6 +195,7 @@ public class InventoryGUI : MonoBehaviour
     // Player clicks on item 6 button for its information through the inventory menu
     public void BttnInfo6()
     {
+        SoundEffectBoard.UISound();
         if (infoBoxSwitch)
         {
             infoBoxs[5].SetActive(true);
@@ -207,6 +214,7 @@ public class InventoryGUI : MonoBehaviour
     // Player clicks on item 7 button for its information through the inventory menu
     public void BttnInfo7()
     {
+        SoundEffectBoard.UISound();
         if (infoBoxSwitch)
         {
             infoBoxs[6].SetActive(true);
@@ -225,6 +233,7 @@ public class InventoryGUI : MonoBehaviour
     // Player clicks on item 8 button for its information through the inventory menu
     public void BttnInfo8()
     {
+        SoundEffectBoard.UISound();
         if (infoBoxSwitch)
         {
             infoBoxs[7].SetActive(true);

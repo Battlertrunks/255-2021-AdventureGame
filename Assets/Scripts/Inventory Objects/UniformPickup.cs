@@ -9,6 +9,7 @@ public class UniformPickup : MonoBehaviour
         // When player finds the Uniform, it puts it into you inventory and increments you item amount
         InventorySystem.mainInventory.items[5] = true;
         InventorySystem.mainInventory.inventoryCounter++;
+        SoundEffectBoard.GrabSound();
 
         // Destroy gameobject
         Destroy(gameObject);

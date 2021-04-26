@@ -9,6 +9,7 @@ public class CoffeePickup : MonoBehaviour
         // When player finds the Coffee, it puts it into you inventory and increments you item amount
         InventorySystem.mainInventory.items[7] = true;
         InventorySystem.mainInventory.inventoryCounter++;
+        SoundEffectBoard.GrabSound();
 
         // Destroys gameobject
         Destroy(gameObject);

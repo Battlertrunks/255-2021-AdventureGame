@@ -61,14 +61,16 @@ public class DoorMechanic : MonoBehaviour
         if (!closedOrOpen)
         {
             doorsAngle = 90;
+            SoundEffectBoard.DoorsSound();
             if (sidePlayerIsOn)
                 doorsAngle = -90;
         }
 
         isAnimPlaying = true;
-        if (closedOrOpen)
+        if (closedOrOpen) {
+            SoundEffectBoard.DoorClosingSound();
             timeOfAnim = lengthOfAnim;
-        else
+        } else
             timeOfAnim = 0;
     }
 }

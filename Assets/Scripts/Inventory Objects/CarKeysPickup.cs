@@ -9,6 +9,7 @@ public class CarKeysPickup : MonoBehaviour
         // When player finds the Car Keys, it puts it into you inventory and increments you item amount
         InventorySystem.mainInventory.items[6] = true;
         InventorySystem.mainInventory.inventoryCounter++;
+        SoundEffectBoard.GrabSound();
 
         // Destroys gameobject
         Destroy(gameObject);

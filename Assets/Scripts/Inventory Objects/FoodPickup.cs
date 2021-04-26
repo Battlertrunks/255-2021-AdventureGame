@@ -9,6 +9,7 @@ public class FoodPickup : MonoBehaviour
         // When player finds the Food, it puts it into you inventory and increments you item amount
         InventorySystem.mainInventory.items[2] = true;
         InventorySystem.mainInventory.inventoryCounter++;
+        SoundEffectBoard.GrabSound();
 
         // Destroys gameobject
         Destroy(gameObject);

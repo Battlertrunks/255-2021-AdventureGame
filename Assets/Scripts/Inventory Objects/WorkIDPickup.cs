@@ -9,6 +9,7 @@ public class WorkIDPickup : MonoBehaviour
         // When player finds the Work ID, it puts it into you inventory and increments you item amount
         InventorySystem.mainInventory.items[4] = true;
         InventorySystem.mainInventory.inventoryCounter++;
+        SoundEffectBoard.GrabSound();
 
         // Destroys gameobject
         Destroy(gameObject);

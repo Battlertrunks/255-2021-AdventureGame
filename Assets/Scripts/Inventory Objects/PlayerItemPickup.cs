@@ -10,6 +10,7 @@ public class PlayerItemPickup : MonoBehaviour
         // When player finds the Garage Remote, it puts it into you inventory and increments you item amount
         InventorySystem.mainInventory.items[1] = true;
         InventorySystem.mainInventory.inventoryCounter++;
+        SoundEffectBoard.GrabSound();
 
         // Destroyes gameobject
         Destroy(gameObject);

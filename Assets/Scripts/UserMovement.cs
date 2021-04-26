@@ -80,6 +80,7 @@ public class UserMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && playerGrounded) // if the player presses space bar and playerGrounded is true
         {
+            SoundEffectBoard.PlayerJump();
             speed.y += Mathf.Sqrt(jumpHeight * -3.0f * gravity); // Executes the jump mechanic
         }
 

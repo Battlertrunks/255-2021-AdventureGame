@@ -23,8 +23,9 @@ public class RayCaster : MonoBehaviour
             Ray rayCast = new Ray(rayCam.transform.position, rayCam.transform.forward);
             RaycastHit hasBeenHit;
 
-            if (Physics.Raycast(rayCast, out hasBeenHit))
+            if (Physics.Raycast(rayCast, out hasBeenHit, 6))
             {
+
                 // When the player clicks on the garage remote
                 PlayerItemPickup remote = hasBeenHit.transform.GetComponent<PlayerItemPickup>();
                 if (remote != null)
@@ -85,6 +86,7 @@ public class RayCaster : MonoBehaviour
                 if (InventorySystem.mainInventory.inventoryCounter == 8 && winCon != null)
                 {
                     // Executes WinCondition, lets player use their mouse cursor, and stops the time
+                    SoundEffectBoard.CarRunning();
                     winCon.WinCondition();
                     Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.Confined;

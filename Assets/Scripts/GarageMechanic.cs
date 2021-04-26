@@ -60,13 +60,15 @@ public class GarageMechanic : MonoBehaviour
         closedOrOpen = !closedOrOpen; // toggles
         if (!closedOrOpen)
         {
+            SoundEffectBoard.GarageSound();
             doorsAngle = 90;
         }
 
         isAnimPlaying = true;
-        if (closedOrOpen)
+        if (closedOrOpen) {
             timeOfAnim = lengthOfAnim;
-        else
+            SoundEffectBoard.GarageSound();
+        } else
             timeOfAnim = 0;
     }
 }
