@@ -5,7 +5,7 @@ using UnityEngine;
 
     
 /// <summary>
-/// This class if for when the player, minion, and boss does sound effect actions
+/// This class if for when the player does sound effects
 /// </summary>
 public class SoundEffectBoard : MonoBehaviour {
 
@@ -15,39 +15,42 @@ public class SoundEffectBoard : MonoBehaviour {
     public static SoundEffectBoard main;
 
     /// <summary>
-    /// When the player shoots
+    /// When the player jumps
     /// </summary>
     public AudioClip jump;
 
     /// <summary>
-    /// Sound when the player dies
+    /// Sound when the player grabs
     /// </summary>
     public AudioClip grab;
 
     /// <summary>
-    /// Sound when the player shoots the rocket
+    /// Sound when the player opens the door
     /// </summary>
     public AudioClip openingDoor;
 
+    /// <summary>
+    /// Sound when the player closes the door
+    /// </summary>
     public AudioClip closingDoor;
 
     /// <summary>
-    /// Sound when the player hurts themself
+    /// Sound when the player opens and closes the garage
     /// </summary>
     public AudioClip garageDoor;
 
     /// <summary>
-    /// Sound when the player dashes
+    /// Sound when the player uses the bush cutter
     /// </summary>
     public AudioClip bushCutter;
 
     /// <summary>
-    /// Sound when the boss dies
+    /// Sound when the player presses UI buttons
     /// </summary>
     public AudioClip uiButtonsSFX;
 
     /// <summary>
-    /// Sound when the boss is shooting
+    /// Sound when the player wins and clicks on the car
     /// </summary>
     public AudioClip carRunning;
 
@@ -69,21 +72,21 @@ public class SoundEffectBoard : MonoBehaviour {
     }
 
     /// <summary>
-    /// Plays when the player shoots
+    /// Plays when the player jumps
     /// </summary>
     public static void PlayerJump() {
         main.player.PlayOneShot(main.jump);
     }
 
     /// <summary>
-    /// Sound when the boss shoots
+    /// Sound when the player grabs
     /// </summary>
     public static void GrabSound() {
         main.player.PlayOneShot(main.grab);
     }
 
     /// <summary>
-    /// Plays when the player shoots the rocket
+    /// Plays when the player opens doors
     /// </summary>
     public static void DoorsSound() {
         main.player.PlayOneShot(main.openingDoor);
@@ -97,28 +100,28 @@ public class SoundEffectBoard : MonoBehaviour {
     }
 
     /// <summary>
-    /// Plays the sound death file when the player dies
+    /// Plays when the garage is opening or closing 
     /// </summary>
     public static void GarageSound() {
         main.player.PlayOneShot(main.garageDoor);
     }
 
     /// <summary>
-    /// Plays the sound when the player takes damage
+    /// Plays the sound when the player uses the bush cutter
     /// </summary>
     public static void BushCutterSound() {
         main.player.PlayOneShot(main.bushCutter);
     }
 
     /// <summary>
-    /// Plays when the player is dashing
+    /// Plays when the player clicks on UI
     /// </summary>
     public static void UISound() {
         main.player.PlayOneShot(main.uiButtonsSFX);
     }
 
     /// <summary>
-    /// Plays when the boss dies
+    /// Plays when the player wins clicking the car
     /// </summary>
     public static void CarRunning() {
         main.player.PlayOneShot(main.carRunning);
